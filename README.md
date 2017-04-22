@@ -35,15 +35,18 @@
 ```json
 
 {
-    "name": "react-burger-menu",
-    "version": "2.0.0",
-    "description": "An off-canvas sidebar component with a collection of effects and styles using CSS transitions and SVG path animations",
-    "main": "lib/BurgerMenu.js",
-    "author": "Imogen Wentworth",
-    "homepage": "https://github.com/negomi/react-burger-menu",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/negomi/react-burger-menu.git"
+    "author": {
+        "name": "Imogen Wentworth"
+    },
+    "browserify": {
+        "transform": [
+            "browserify-optional"
+        ]
+    },
+    "browserify-shim": {
+        "react": "global:React",
+        "react-dom": "global:ReactDOM",
+        "snapsvg": "global:Snap"
     },
     "bugs": {
         "url": "https://github.com/negomi/react-burger-menu/issues"
@@ -55,6 +58,7 @@
         "prop-types": "^15.5.8",
         "snapsvg-cjs": "0.0.4"
     },
+    "description": "An off-canvas sidebar component with a collection of effects and styles using CSS transitions and SVG path animations",
     "devDependencies": {
         "babel-core": "^6.3.26",
         "babel-eslint": "^7.0.0",
@@ -75,38 +79,16 @@
         "react-test-renderer": "^15.5.4",
         "sinon": "^2.1.0"
     },
-    "peerDependencies": {
-        "react": ">=0.14.0 <16.0.0",
-        "react-dom": ">=0.14.0 <16.0.0"
-    },
-    "browserify": {
-        "transform": [
-            "browserify-optional"
-        ]
-    },
-    "browserify-shim": {
-        "react": "global:React",
-        "react-dom": "global:ReactDOM",
-        "snapsvg": "global:Snap"
-    },
-    "scripts": {
-        "build": "gulp clean && NODE_ENV=production gulp build",
-        "examples": "gulp dev:server",
-        "lint": "eslint ./; true",
-        "publish:site": "gulp publish:examples",
-        "publish:version": "gulp commit:version && gulp push",
-        "start": "gulp dev",
-        "test": "gulp test --reporter list",
-        "tdd": "gulp watch:tests --reporter min",
-        "watch": "gulp watch:lib",
-        "release": "npm run build && gulp bump && gulp release && npm run publish:version",
-        "release:minor": "npm run build && gulp bump:minor && gulp release",
-        "release:major": "npm run build && gulp bump:major && gulp release"
+    "directories": {},
+    "dist": {
+        "shasum": "678578b1d09c24df2c360dc4604523aa3e59fd71",
+        "tarball": "https://registry.npmjs.org/react-burger-menu/-/react-burger-menu-2.0.0.tgz"
     },
     "engines": {
         "node": ">=4.0.0"
     },
-    "readmeFilename": "README.md",
+    "gitHead": "3418b963a510ad99eabd371f4f75a07ad9788582",
+    "homepage": "https://github.com/negomi/react-burger-menu",
     "keywords": [
         "component",
         "hamburger",
@@ -114,7 +96,39 @@
         "react",
         "react-component"
     ],
-    "license": "MIT"
+    "license": "MIT",
+    "main": "lib/BurgerMenu.js",
+    "maintainers": [
+        {
+            "name": "negomi"
+        }
+    ],
+    "name": "react-burger-menu",
+    "optionalDependencies": {},
+    "peerDependencies": {
+        "react": ">=0.14.0 <16.0.0",
+        "react-dom": ">=0.14.0 <16.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/negomi/react-burger-menu.git"
+    },
+    "scripts": {
+        "build": "gulp clean && NODE_ENV=production gulp build",
+        "examples": "gulp dev:server",
+        "lint": "eslint ./; true",
+        "publish:site": "gulp publish:examples",
+        "publish:version": "gulp commit:version && gulp push",
+        "release": "npm run build && gulp bump && gulp release && npm run publish:version",
+        "release:major": "npm run build && gulp bump:major && gulp release",
+        "release:minor": "npm run build && gulp bump:minor && gulp release",
+        "start": "gulp dev",
+        "tdd": "gulp watch:tests --reporter min",
+        "test": "gulp test --reporter list",
+        "watch": "gulp watch:lib"
+    },
+    "version": "2.0.0",
+    "bin": {}
 }
 ```
 
